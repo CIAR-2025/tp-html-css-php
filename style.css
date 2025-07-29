@@ -11,7 +11,10 @@ body {
     color: #333;
     background-color: #f4f4f4;
 }
-
+.required::after {
+    content: " *";
+    color: red;
+}
 /* Header et navigation */
 header {
     background: linear-gradient(135deg, #fc7d48 0%, #e84a2c 100%);

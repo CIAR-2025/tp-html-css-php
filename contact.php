@@ -1,4 +1,5 @@
 <?php
+global $pdo;
 require_once 'config.php';
 
 $message_confirmation = "";
@@ -89,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="POST" action="contact.php" class="contact-form">
             <div class="form-group">
                 <label for="prenoms">Prénoms *</label>
-                <input type="text" id="prenoms" name="prenoms" required
+                <input type="text" id="prenoms" name="prenoms" class="required" required
                        value="<?php echo htmlspecialchars(isset($prenoms) ? $prenoms : ''); ?>">
             </div>
 
@@ -101,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="form-group">
                 <label for="email">Email institutionnel *</label>
-                <input type="email" id="email" name="email" required
+                <input type="email" id="email" name="email" required class="required"
                        value="<?php echo htmlspecialchars(isset($email) ? $email : ''); ?>">
             </div>
 
@@ -114,13 +115,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="form-group">
                 <label for="objet">Objet *</label>
-                <input type="text" id="objet" name="objet" required
+                <input type="text" id="objet" class="required" name="objet" required
                        value="<?php echo htmlspecialchars(isset($objet) ? $objet : ''); ?>">
             </div>
 
             <div class="form-group">
                 <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="5" required><?php echo htmlspecialchars(isset($message) ? $message : ''); ?></textarea>
+                <textarea id="message" class="required" name="message" rows="5" required><?php echo htmlspecialchars(isset($message) ? $message : ''); ?></textarea>
             </div>
 
             <button type="submit" class="btn-submit">Envoyer</button>
